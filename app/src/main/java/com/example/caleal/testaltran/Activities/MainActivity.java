@@ -14,12 +14,8 @@ import com.example.caleal.testaltran.R;
 import com.example.caleal.testaltran.model.BrastlewarkModel;
 import com.example.caleal.testaltran.service.ServiceManager;
 import com.example.caleal.testaltran.service.callback.CallBackGetBrastlewark;
-import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 public class MainActivity extends BaseActivity {
 
@@ -41,16 +37,16 @@ public class MainActivity extends BaseActivity {
 
         ServiceManager.getBrastlewark(new CallBackGetBrastlewark() {
             @Override
-            public void onSuccess(JsonObject ListBrastlewark) {
+            public void onSuccess(ArrayList<BrastlewarkModel> ListBrastlewark) {
 
-                JsonObject jsonObject = ListBrastlewark;
+               /* ArrayList arrayList = ListBrastlewark;
                 Gson gson = new Gson();
-                for (Map.Entry<String,JsonElement> entry : jsonObject.entrySet()){
+                for (Object entry : arrayList.toArray()){
                     BrastlewarkModel brastlewarkModel = new BrastlewarkModel();
-                    brastlewarkModel = gson.fromJson(entry.getValue(), BrastlewarkModel.class);
+                    brastlewarkModel = gson.fromJson(entry.toString(), BrastlewarkModel.class);
                     arrayListBrastlewark.add(brastlewarkModel);
 
-                }
+                }*/
                 BrastlewarkAdapter mAdapterBrastlewark = new BrastlewarkAdapter(MainActivity.this,arrayListBrastlewark);
                 view_reciler.setAdapter(mAdapterBrastlewark);
             }

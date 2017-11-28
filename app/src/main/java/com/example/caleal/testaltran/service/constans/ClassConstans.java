@@ -5,5 +5,5 @@ package com.example.caleal.testaltran.service.constans;
  */
 
 public class ClassConstans {
-    public static final String URL_ENDPOINT = "https://raw.githubusercontent.com/rrafols/mobile_test/master/";
+    public static final String URL_ENDPOINT = "https://raw.githubusercontent.com/rrafols/mobile_test/master";
 }

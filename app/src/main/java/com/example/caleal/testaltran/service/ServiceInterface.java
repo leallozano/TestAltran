@@ -1,6 +1,8 @@
 package com.example.caleal.testaltran.service;
 
-import com.google.gson.JsonObject;
+import com.example.caleal.testaltran.model.BrastlewarkModel;
+
+import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -11,8 +13,8 @@ import retrofit2.http.GET;
 
 public interface ServiceInterface {
 
-    @GET("data.json")
-    Call<JsonObject> getBrastlewarkList();
+    @GET("/data.json")
+    Call<ArrayList<BrastlewarkModel>> getBrastlewarkList();
 
 
 }

@@ -95,12 +95,12 @@ public class BrastlewarkAdapter extends RecyclerView.Adapter<BrastlewarkAdapter.
             super(itemView);
             // ButterKnife.bind(this, itemView);
             this.itemView = itemView;
-            Id = (TextView)itemView.findViewById(R.id.id);
-            name = (TextView)itemView.findViewById(R.id.name);
-            age = (TextView)itemView.findViewById(R.id.age);
-            weight = (TextView)itemView.findViewById(R.id.weight);
-            height =(TextView)itemView.findViewById(R.id.height);
-            hair_color =(TextView)itemView.findViewById(R.id.hair_color);
+            Id = itemView.findViewById(R.id.id);
+            name = itemView.findViewById(R.id.name);
+            age = itemView.findViewById(R.id.age);
+            weight = itemView.findViewById(R.id.weight);
+            height =itemView.findViewById(R.id.height);
+            hair_color =itemView.findViewById(R.id.hair_color);
 
         }
     }
