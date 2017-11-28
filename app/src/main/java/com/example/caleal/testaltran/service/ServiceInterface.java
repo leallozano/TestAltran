@@ -15,6 +15,6 @@ public interface ServiceInterface {
 
     @GET("/data.json")
     Call<ArrayList<BrastlewarkModel>> getBrastlewarkList();
-
+    //void getBrastlewarkList(Callback<BrastlewarkModel> callback);
 
 }

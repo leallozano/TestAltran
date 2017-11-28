@@ -1,6 +1,7 @@
 package com.example.caleal.testaltran.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by CALEAL on 11/27/2017.
@@ -12,30 +13,30 @@ public class BrastlewarkModel {
 
     int id;
     String name;
-    String photo;
+    String thumbnail;
     int age;
     Double weight;
     Double height;
     String hairColor;
-    ArrayList<String> professions;
-    ArrayList<String> friendsNames;
-    ArrayList<BrastlewarkModel> friends;
+    List<String>  professions;
+    //List<String>  friendsNames;
+    List<String> friends;
 
     public BrastlewarkModel() {
 
 
     }
 
-    public BrastlewarkModel(int id, String name, String photo, int age, Double weight, Double height, String hairColor, ArrayList<String> professions, ArrayList<String> friendsNames, ArrayList<BrastlewarkModel> friends) {
+    public BrastlewarkModel(int id, String name, String thumbnail, int age, Double weight, Double height, String hairColor, List<String> professions, List<String> friends) {
         this.id = id;
         this.name = name;
-        this.photo = photo;
+        this.thumbnail = thumbnail;
         this.age = age;
         this.weight = weight;
         this.height = height;
         this.hairColor = hairColor;
         this.professions = professions;
-        this.friendsNames = friendsNames;
+        //this.friendsNames = friendsNames;
         this.friends = friends;
     }
 
@@ -55,12 +56,12 @@ public class BrastlewarkModel {
         this.name = name;
     }
 
-    public String getPhoto() {
-        return photo;
+    public String getThumbnail() {
+        return thumbnail;
     }
 
-    public void setPhoto(String photo) {
-        this.photo = photo;
+    public void setThumbnail(String thumbnail) {
+        this.thumbnail = thumbnail;
     }
 
     public int getAge() {
@@ -95,7 +96,7 @@ public class BrastlewarkModel {
         this.hairColor = hairColor;
     }
 
-    public ArrayList<String> getProfessions() {
+    public List<String> getProfessions() {
         return professions;
     }
 
@@ -103,7 +104,7 @@ public class BrastlewarkModel {
         this.professions = professions;
     }
 
-    public ArrayList<String> getFriendsNames() {
+    /*public List<String> getFriendsNames() {
         return friendsNames;
     }
 
@@ -111,11 +112,15 @@ public class BrastlewarkModel {
         this.friendsNames = friendsNames;
     }
 
-    public ArrayList<BrastlewarkModel> getFriends() {
+    public void setFriends(List<BrastlewarkModel> friends) {
+        this.friends = friends;
+    }*/
+
+    public List<String> getFriends() {
         return friends;
     }
 
-    public void setFriends(ArrayList<BrastlewarkModel> friends) {
+    public void setFriends(List<String> friends) {
         this.friends = friends;
     }
 }
