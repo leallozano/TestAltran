@@ -11,8 +11,8 @@ import android.widget.TextView;
 import com.example.caleal.testaltran.Activities.Brastlewark_data_activity;
 import com.example.caleal.testaltran.Activities.MainActivity;
 import com.example.caleal.testaltran.R;
+import com.example.caleal.testaltran.model.Brastlewark;
 import com.example.caleal.testaltran.model.BrastlewarkModel;
-
 
 import java.util.ArrayList;
 
@@ -31,7 +31,7 @@ public class BrastlewarkAdapter extends RecyclerView.Adapter<BrastlewarkAdapter.
         this.brastlewarkModelArrayList = brastlewarModelArrayList;
     }
 
-    public BrastlewarkAdapter() {
+    public BrastlewarkAdapter(MainActivity mContext, ArrayList<Brastlewark> arrayListBrastlewark) {
     }
 
     @Override
@@ -44,25 +44,26 @@ public class BrastlewarkAdapter extends RecyclerView.Adapter<BrastlewarkAdapter.
     @Override
     public void onBindViewHolder(BrastlewarkAvilableViewHolder holder, final int position) {
 
-        holder.Id.setText(String.valueOf(brastlewarkModelArrayList.get(position).getId()));
-
-        holder.name.setText(String.valueOf(brastlewarkModelArrayList.get(position).getName()));
+        //holder.Id.setText(String.valueOf(brastlewarkModelArrayList.get(position).getId()));
+        //holder.Id.setText(String.valueOf(brastlewarkModelArrayList.get(position).getBrastlewark().get(position).getId()));
+        //holder.Id.setText(String.valueOf(brastlewarkModelArrayList.get(position).getBrastlewark().get(position).getId()));
+        /*holder.name.setText(String.valueOf(brastlewarkModelArrayList.get(position).getName()));
         holder.age.setText(brastlewarkModelArrayList.get(position).getAge());
         holder.weight.setText(String.valueOf(brastlewarkModelArrayList.get(position).getWeight()));
         holder.height.setText(String.valueOf(brastlewarkModelArrayList.get(position).getHeight()));
-        holder.hair_color.setText(brastlewarkModelArrayList.get(position).getHairColor());
+        holder.hair_color.setText(brastlewarkModelArrayList.get(position).getHairColor());*/
 
         holder.name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Bundle bundle =new Bundle();
-                bundle.putString("Id",String.valueOf(brastlewarkModelArrayList.get(position).getId()));
-                bundle.putString("Name",String.valueOf(brastlewarkModelArrayList.get(position).getName()));
+                //bundle.putString("Id",String.valueOf(brastlewarkModelArrayList.get(position).getBrastlewark().get(position).getId()));
+                /*bundle.putString("Name",String.valueOf(brastlewarkModelArrayList.get(position).getName()));
                 bundle.putInt("Age", Integer.parseInt(String.valueOf(brastlewarkModelArrayList.get(position).getAge())));
                 bundle.putString("Weight",String.valueOf(brastlewarkModelArrayList.get(position).getWeight()));
                 bundle.putString("Height",String.valueOf(brastlewarkModelArrayList.get(position).getHeight()));
-                bundle.putString("HairColor",brastlewarkModelArrayList.get(position).getHairColor());
+                bundle.putString("HairColor",brastlewarkModelArrayList.get(position).getHairColor());*/
 
                 ((MainActivity) mContext).openActivity(Brastlewark_data_activity.class,bundle);
             }

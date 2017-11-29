@@ -1,6 +1,6 @@
 package com.example.caleal.testaltran.service;
 
-import com.example.caleal.testaltran.model.BrastlewarkModel;
+import com.example.caleal.testaltran.model.Brastlewark;
 
 import java.util.ArrayList;
 
@@ -13,8 +13,8 @@ import retrofit2.http.GET;
 
 public interface ServiceInterface {
 
-    @GET("/data.json")
-    Call<ArrayList<BrastlewarkModel>> getBrastlewarkList();
-    //void getBrastlewarkList(Callback<BrastlewarkModel> callback);
+    @GET("data.json")
+    //@GET("posts")
+    Call<ArrayList<Brastlewark>> getPost();
 
 }

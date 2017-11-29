@@ -1,6 +1,6 @@
 package com.example.caleal.testaltran.service.callback;
 
-import com.example.caleal.testaltran.model.BrastlewarkModel;
+import com.example.caleal.testaltran.model.Brastlewark;
 
 import java.util.ArrayList;
 
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public interface CallBackGetBrastlewark {
 
-    void onSuccess(ArrayList<BrastlewarkModel> ListBrastlewark);
+    void onSuccess(ArrayList<Brastlewark> brastlewarkModel);
     void onError(String msgError, int indError);
 
 }

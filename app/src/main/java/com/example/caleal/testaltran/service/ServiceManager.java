@@ -1,6 +1,6 @@
 package com.example.caleal.testaltran.service;
 
-import com.example.caleal.testaltran.model.BrastlewarkModel;
+import com.example.caleal.testaltran.model.Brastlewark;
 import com.example.caleal.testaltran.service.callback.CallBackGetBrastlewark;
 
 import java.util.ArrayList;
@@ -16,32 +16,27 @@ import retrofit2.Response;
 
 public class ServiceManager {
 
-    public static void getBrastlewark(final CallBackGetBrastlewark callBackGetBrastlewark) {
-
+    public static void getPostList(final CallBackGetBrastlewark callBackGetBrastlewark) {
         ServiceInterface serviceInterface = ServiceHelper.getInstance();
-        //final ArrayList<BrastlewarkModel> arrayListBrastlewark =  new ArrayList<BrastlewarkModel>();
-        final ArrayList<BrastlewarkModel> jsonArrayListBrastlewark = new ArrayList<BrastlewarkModel>();
+        //final ArrayList<PeopleModel> arrayListPeople =  new ArrayList<PeopleModel>();
+        //final JsonObject[] jsonObjectListPeople = {new JsonObject()};
 
-        serviceInterface.getBrastlewarkList().enqueue(new Callback<ArrayList<BrastlewarkModel>>() {
+        serviceInterface.getPost().enqueue(new Callback<ArrayList<Brastlewark>>() {
 
             @Override
-            public void onResponse(Call<ArrayList<BrastlewarkModel>> call, Response<ArrayList<BrastlewarkModel>> response) {
-
+            public void onResponse(Call<ArrayList<Brastlewark>> call, Response<ArrayList<Brastlewark>> response) {
                 if (response.body() != null && response.body().size() > 0) {
                     callBackGetBrastlewark.onSuccess(response.body());
                 }
 
             }
             @Override
-            public void onFailure(Call<ArrayList<BrastlewarkModel>> call, Throwable t) {
+            public void onFailure(Call<ArrayList<Brastlewark>> call, Throwable t) {
 
-                callBackGetBrastlewark.onError("Error en al invocar al Servicio", 1);
+                callBackGetBrastlewark.onError("Error al invocar el Servicio", 1);
 
             }
         });}
-
-
-
 
 
 }

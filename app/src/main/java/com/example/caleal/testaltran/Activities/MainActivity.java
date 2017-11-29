@@ -9,9 +9,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.caleal.testaltran.Adapters.BrastlewarkAdapter;
 import com.example.caleal.testaltran.R;
-import com.example.caleal.testaltran.model.BrastlewarkModel;
+import com.example.caleal.testaltran.model.Brastlewark;
 import com.example.caleal.testaltran.service.ServiceManager;
 import com.example.caleal.testaltran.service.callback.CallBackGetBrastlewark;
 
@@ -20,7 +19,8 @@ import java.util.ArrayList;
 public class MainActivity extends BaseActivity {
 
     RecyclerView view_reciler;
-    ArrayList<BrastlewarkModel> arrayListBrastlewark = new ArrayList<BrastlewarkModel>();
+    //ArrayList<BrastlewarkModel> arrayListBrastlewark = new ArrayList<BrastlewarkModel>();
+    //ArrayList<BrastlewarkModel> arrayListBrastlewark = new ArrayList<BrastlewarkModel>();
     private Toolbar toolbar;
 
     @Override
@@ -35,20 +35,26 @@ public class MainActivity extends BaseActivity {
         my_lienarlayout.setOrientation(LinearLayoutManager.VERTICAL);
         view_reciler.setLayoutManager(my_lienarlayout);
 
-        ServiceManager.getBrastlewark(new CallBackGetBrastlewark() {
+        //ArrayList<BrastlewarkModel> brastlewarkModels = new ArrayList<BrastlewarkModel>();
+        ServiceManager.getPostList(new CallBackGetBrastlewark() {
             @Override
-            public void onSuccess(ArrayList<BrastlewarkModel> ListBrastlewark) {
+            public void onSuccess(ArrayList<Brastlewark> brastlewarkModel) {
 
-               /* ArrayList arrayList = ListBrastlewark;
-                Gson gson = new Gson();
-                for (Object entry : arrayList.toArray()){
-                    BrastlewarkModel brastlewarkModel = new BrastlewarkModel();
-                    brastlewarkModel = gson.fromJson(entry.toString(), BrastlewarkModel.class);
-                    arrayListBrastlewark.add(brastlewarkModel);
+                //JsonObject jsonObject = brastlewarkModel;
+                /*Gson gson = new Gson();
+                for (Map.Entry<String,JsonElement> entry : jsonObject.entrySet()){
+                    Brastlewark bm;
+                    bm = gson.fromJson(entry.getValue().getAsJsonObject(), Brastlewark.class);
+                    //arrayListBrastlewark.add(bm);
+                    arrayListBrastlewark.add((BrastlewarkModel) bm.getBrastlewark());
 
-                }*/
-                BrastlewarkAdapter mAdapterBrastlewark = new BrastlewarkAdapter(MainActivity.this,arrayListBrastlewark);
-                view_reciler.setAdapter(mAdapterBrastlewark);
+                }
+                BrastlewarkAdapter mAdapter= new BrastlewarkAdapter(MainActivity.this,arrayListBrastlewark);
+                view_reciler.setAdapter(mAdapter);
+                //BrastlewarkAdapter mAdapterBrastlewark = new BrastlewarkAdapter(MainActivity.this,arrayListBrastlewark);
+                /*BrastlewarkAdapter mAdapterBrastlewark = new BrastlewarkAdapter(Brastlewark_data_activity.class,arrayListBrastlewark);
+                view_reciler.setAdapter(mAdapterBrastlewark);*/
+                Toast.makeText(MainActivity.this,"Esto trajo "+ String.valueOf(brastlewarkModel.size()),Toast.LENGTH_LONG).show();
             }
 
             @Override
